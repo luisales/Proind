@@ -1,10 +1,16 @@
 package com.example.proind;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
+
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        final MediaPlayer negro = MediaPlayer.create(this,R.raw.negro);
+        Button button = (Button) this.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                 negro.start();
+                negro.start();
+                negro.start();
+
+            }
+        });
     }
 
 }
